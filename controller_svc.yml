@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: registry-admission-service
+spec:
+  selector:
+    app: registry-admission
+  ports:
+  - name: registry-admission
+    protocol: TCP
+    port: 443
+    targetPort: 3000

@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: registry-admission
+  labels:
+    app: registry-admission
+spec:
+  template:
+    metadata:
+      labels:
+        app: registry-admission
+    spec:
+      containers:
+      - name: registry-admission
+        image: "inklin/controller:latest"
+        env:
+        - name: CONTAINER_REGISTRY
+          value: "inklin"
+        ports:
+        - name: admission-port
+          containerPort: 3000

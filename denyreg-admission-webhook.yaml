@@ -3,7 +3,7 @@ kind: ValidatingWebhookConfiguration
 metadata:
   name: denyreg
 webhooks:
-  - name: registry-admission
+  - name: registry-admission-service.default.svc.cluster.local
     rules:
       - apiGroups:
           - ""
@@ -15,6 +15,9 @@ webhooks:
           - pods
     failurePolicy: Fail
     clientConfig:
-      caBundle: "<CHANGEME>"
-      url: "registry-admission-service.svc.default.cluster.local"
+      service:
+        name: registry-admission-service
+        namespace: default
+        path: "/"
+      caBundle: CA_BUNDLE
       

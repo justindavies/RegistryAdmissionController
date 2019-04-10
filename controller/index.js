@@ -50,8 +50,8 @@ app.post('/', function(req, res) {
 
 
 https.createServer({
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem')
+  key: fs.readFileSync('server-key.pem'),
+  cert: fs.readFileSync('server-cert.pem')
 }, app).listen(3000, () => {
   console.log('Listening...')
 })
