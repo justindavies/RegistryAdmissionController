@@ -20,7 +20,7 @@ secret/registry-admission-certs created
 ```
 
 ## Inject CA bundle
-This will inject the Certificate Authority bundle (Base64 encoded) into the Admission Controller definition.
+This will inject the Certificate Authority bundle (Base64 encoded) into the WebHook definition.
 
 ```
 ./inject_ca_bundle.sh
@@ -28,7 +28,7 @@ This will inject the Certificate Authority bundle (Base64 encoded) into the Admi
 LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUV5RENDQXJDZ0F3SUJBZ0lSQU5NYVBSRDMrdVlwN2RpTVZ5SGxVQjB3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdIaGNOTVRrd016STRNVFV5T1RFMVdoY05NakV3TXpJM01UVXlPVEUxV2pBTgpNUXN3Q1FZRFZRUURFd0pqWVRDQ0FpSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdn-{snip}-1anNwZVU5dkNkcFcwemc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
 ```
 
-**NOTE**: This will automatically edit the *controller.yaml* definition.
+**NOTE**: This will automatically edit the *denyreg-admission-webhook.yaml* definition.
 
 ## Create Controller Service
 
